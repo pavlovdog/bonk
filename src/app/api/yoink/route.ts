@@ -14,6 +14,11 @@ export async function POST(req: NextRequest) {
     trustedData: { messageBytes },
   } = await req.json();
   const frameMessage = Message.decode(Buffer.from(messageBytes, "hex"));
+
+  console.log(messageBytes);
+  console.log('frame message');
+  console.log(frameMessage);
+
   const validateResult = await hubClient.validateMessage(frameMessage);
   if (validateResult.isOk() && validateResult.value.valid) {
     const validMessage = validateResult.value.message;
