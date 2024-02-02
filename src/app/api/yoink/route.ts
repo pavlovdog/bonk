@@ -56,10 +56,10 @@ export async function POST(req: NextRequest) {
           <meta property="og:image" content="${imageUrl}" />
           <meta name="fc:frame" content="vNext" />
           <meta name="fc:frame:image" content="${imageUrl}" />
-          "fc:frame:post_url": ${postUrl},
-          "fc:frame:button:1": "🏆 Leaderboard",
-          "fc:frame:button:1:action": "post_redirect",
-            </head>
+          <meta name="fc:frame:post_url" content="${postUrl}" />
+          <meta name="fc:frame:button:1" content="Transaction" />
+          <meta name="fc:frame:button:1:action" content="post_redirect" />
+        </head>
         <body>Yoink</body>
       </html>`,
         {
