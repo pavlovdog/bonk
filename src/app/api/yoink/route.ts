@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
         console.log(await kv.incr(key));
       }
 
-      const postUrl = `${process.env["HOST"]}/api/transaction?tx=0x506cdb868317f0113c11c645dd455a32140dc8e1f56384cf8b3671627d69d690`;
+      const postUrl = `${process.env["HOST"]}/api/transaction`;
       const imageUrl = `${process.env["HOST"]}/api/images/yoink?date=${Date.now()}&name=${name}`;
 
       return new NextResponse(

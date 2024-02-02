@@ -5,6 +5,7 @@ export async function POST(req: NextRequest) {
     untrustedData,
   } = await req.json();
 
+  console.log('working on transaction');
   console.log(untrustedData);
 
   return NextResponse.redirect(process.env["HOST"] as string, {status: 302});
