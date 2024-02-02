@@ -54,6 +54,8 @@ const senderAddress = process.env.YOINK_CONTRACT as `0x${string}`;
 const userOpSigner = mnemonicToAccount(process.env.USEROP_SIGNER_MNEMONIC as string);
 
 const sendYoink = async (message: Message) => {
+  console.log('message', message);
+  console.log('frameActionBody', message.data?.frameActionBody);
   console.log('signature', Buffer.from(message.signature).toString('hex'));
 
   const args = [
@@ -63,6 +65,8 @@ const sendYoink = async (message: Message) => {
     // @ts-ignore
     '0x' + Buffer.from(message.data?.frameActionBody).toString('hex')
   ];
+
+  console.log('args', args);
 
   const callData = encodeFunctionData({
     abi,
