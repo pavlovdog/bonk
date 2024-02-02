@@ -25,7 +25,7 @@ const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
 const hubClient = getSSLHubRpcClient(HUB_URL);
 
 const publicClient = createPublicClient({
-	transport: http("https://ethereum-sepolia.publicnode.com/"),
+	transport: http("https://mainnet.base.org/"),
 	chain: base,
 });
 
