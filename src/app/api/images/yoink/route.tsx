@@ -42,6 +42,11 @@ export async function GET(req: NextRequest) {
           height="32"
           src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.0.3/72x72/1f6a9.png"
         />
+        <img
+          width="32"
+          height="32"
+          src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.0.3/72x72/1f535.png"
+        />
       </div>
       <div style={{ display: "flex", marginTop: 12}}>{yoinks} yoinks</div>
     </div>,
