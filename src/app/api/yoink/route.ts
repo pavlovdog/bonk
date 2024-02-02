@@ -37,10 +37,11 @@ export async function POST(req: NextRequest) {
       }
       const flag = (await kv.get("flag")) as string;
       const key = `yoinks:${name}`;
+      console.log(key);
       if (name.toString() !== flag?.toString()) {
-        await kv.set("flag", name);
-        await kv.incr("yoinks");
-        await kv.incr(key);
+        console.log(await kv.set("flag", name));
+        console.log(await kv.incr("yoinks"));
+        console.log(await kv.incr(key));
       }
 
       const imageUrl = `${process.env["HOST"]}/api/images/yoink?date=${Date.now()}&name=${name}`;
