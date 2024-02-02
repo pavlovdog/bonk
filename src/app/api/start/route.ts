@@ -10,7 +10,6 @@ export async function POST(req: NextRequest) {
   } = await req.json();
 
   console.log(untrustedData);
-  console.log(req.json());
 
   if (untrustedData.buttonIndex === 1) {
     return NextResponse.redirect(process.env["HOST"] as string, {status: 302});
