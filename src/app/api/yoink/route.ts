@@ -56,7 +56,9 @@ const userOpSigner = mnemonicToAccount(process.env.USEROP_SIGNER_MNEMONIC as str
 const sendYoink = async (message: Message) => {
   console.log('message', message);
   console.log('frameActionBody', message.data?.frameActionBody);
-  console.log('signature', Buffer.from(message.signature).toString('hex'));
+
+  const messageSignature = Buffer.from(message.signature).toString('hex');
+  console.log('signature', messageSignature);
 
   const messageData: MessageData = {
     type: message.data?.type as MessageType,
@@ -70,9 +72,8 @@ const sendYoink = async (message: Message) => {
 
   const args = [
     '0x' + Buffer.from(message.signer).toString('hex'),
-    '0x' + Buffer.from(message.signature).toString('hex').slice(0, 32),
-    '0x' + Buffer.from(message.signature).toString('hex').slice(32, 64),
-    // @ts-ignore
+    Buffer.from(messageSignature).slice(0, 32),
+    Buffer.from(messageSignature).slice(32, 64),
     '0x' + Buffer.from(messageEncoded).toString('hex')
   ];
 
