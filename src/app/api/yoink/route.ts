@@ -44,7 +44,9 @@ export async function POST(req: NextRequest) {
         console.log(await kv.incr(key));
       }
 
+      const postUrl = `${process.env["HOST"]}/api/transaction/0x506cdb868317f0113c11c645dd455a32140dc8e1f56384cf8b3671627d69d690`;
       const imageUrl = `${process.env["HOST"]}/api/images/yoink?date=${Date.now()}&name=${name}`;
+
       return new NextResponse(
         `<!DOCTYPE html>
       <html>
@@ -54,7 +56,10 @@ export async function POST(req: NextRequest) {
           <meta property="og:image" content="${imageUrl}" />
           <meta name="fc:frame" content="vNext" />
           <meta name="fc:frame:image" content="${imageUrl}" />
-        </head>
+          "fc:frame:post_url": ${postUrl},
+          "fc:frame:button:1": "🏆 Leaderboard",
+          "fc:frame:button:1:action": "post_redirect",
+            </head>
         <body>Yoink</body>
       </html>`,
         {

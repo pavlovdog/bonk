@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "fc:frame:post_url": postUrl,
       "fc:frame:button:1": "🏆 Leaderboard",
       "fc:frame:button:1:action": "post_redirect",
-      "fc:frame:button:2": "🚩 Start",
+      "fc:frame:button:2": "🔵🚩 Start",
     },
   };
 }
