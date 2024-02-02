@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   } = await req.json();
 
   if (buttonIndex === 1) {
-    return NextResponse.redirect('https://yoink.terminally.online', {status: 302});
+    return NextResponse.redirect(process.env["HOST"] as string, {status: 302});
   }
 
   return new NextResponse(
