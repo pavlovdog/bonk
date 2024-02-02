@@ -152,6 +152,9 @@ const sendYoink = async (message: Message) => {
 }
 
 
+export const maxDuration = 300;
+
+
 export async function POST(req: NextRequest) {
   const {
     trustedData: { messageBytes },
