@@ -72,8 +72,8 @@ const sendYoink = async (message: Message) => {
 
   const args = [
     '0x' + Buffer.from(message.signer).toString('hex'),
-    Buffer.from(messageSignature).slice(0, 32),
-    Buffer.from(messageSignature).slice(32, 64),
+    '0x' + Buffer.from(messageSignature).slice(0, 32).toString('hex'),
+    '0x' + Buffer.from(messageSignature).slice(32, 64).toString('hex'),
     '0x' + Buffer.from(messageEncoded).toString('hex')
   ];
 
