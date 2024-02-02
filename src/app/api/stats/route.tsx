@@ -15,7 +15,9 @@ export async function GET() {
     cursor = res[0];
     userKeys.push(...res[1]);
   } while (cursor !== 0);
+  console.log(userKeys);
   const yoinkCounts = await kv.mget(userKeys);
+  console.log(yoinkCounts);
   const leaderboard = userKeys
     .map((key, i) => [key.split(":")[1], yoinkCounts[i]] as [string, number])
     .sort((a, b) => b[1] - a[1]);
