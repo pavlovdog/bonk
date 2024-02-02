@@ -3410,6 +3410,11 @@ pend@~1.2.0:
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
   integrity sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==
 
+permissionless@^0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/permissionless/-/permissionless-0.0.35.tgz#925818c169fdc5e282c14bfb3ec7ae1c4ff82e3f"
+  integrity sha512-wWnFJW9bCiIBvLVkZ7aPbX0w5LIeelb5dsBOKHIEaRf9xKaxNrpRWCsBRHHjiL0lhvqPlHvEmjJ71Y2mxPyDpg==
+
 picocolors@1.0.0, picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
