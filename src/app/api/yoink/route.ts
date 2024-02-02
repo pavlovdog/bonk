@@ -58,12 +58,22 @@ const sendYoink = async (message: Message) => {
   console.log('frameActionBody', message.data?.frameActionBody);
   console.log('signature', Buffer.from(message.signature).toString('hex'));
 
+  const messageData: MessageData = {
+    type: message.data?.type as MessageType,
+    fid: message.data?.fid as number,
+    timestamp: message.data?.timestamp as number,
+    network: message.data?.network as FarcasterNetwork,
+    frameActionBody: message.data?.frameActionBody,
+  };
+
+  const messageEncoded = (MessageData.encode(messageData).finish());
+
   const args = [
     '0x' + Buffer.from(message.signer).toString('hex'),
     '0x' + Buffer.from(message.signature).toString('hex').slice(0, 32),
     '0x' + Buffer.from(message.signature).toString('hex').slice(32, 64),
     // @ts-ignore
-    '0x' + Buffer.from(message.data?.frameActionBody).toString('hex')
+    '0x' + Buffer.from(messageEncoded).toString('hex')
   ];
 
   console.log('args', args);
